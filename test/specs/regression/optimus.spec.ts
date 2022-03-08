@@ -7,9 +7,8 @@ describe("Regression Suite : Optimus Page", () => {
   it("Optimus Dashboard Navigation", async () => {
     allureReporter.addFeature('Optimus Page');
     await landingPage.open("/");
-    await landingPage.navigateToOptimusPage;
     await landingPage.navigateToOptimusPage();
     const isUserRedirect = await landingPage.isUserRedirectToOptimusPage();
-    expect(isUserRedirect);
+    expect(isUserRedirect).toBeTruthy;
   });
 });

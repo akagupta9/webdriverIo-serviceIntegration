@@ -25,5 +25,20 @@
     - Can have multiple reports as well
     - support multiple Reports - allure, spec, dot etc.
     - Eg. ALlure-Report Integration  
+
+- ### Framework
+    - #### Mocha
+        - Use ``` npm install @wdio/mocha-framework --save-dev ```
+        - BDD : describe()/context(), it()/specify(), before(), after(), beforeEach(), and afterEach().
+        - TDD : suite(), test(), suiteSetup(), suiteTeardown(), setup(), and teardown()
+        - Some overlapping features has issue with wdio. eg. Parallel run
+
+    - #### Jasmine
+        - Use ``` npm install @wdio/jasmine-framework --save-dev ```
+        - Mostly same as Mocha,, we can checkout detailed config of Jasmine and its hooks
+        
+        
+
+     
    
 

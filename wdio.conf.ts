@@ -1,5 +1,4 @@
 export const config: WebdriverIO.Config = {
-  headless: true,
   logLevel: "error",
   bail: 0,
   baseUrl: "https://testvagrant.com/",
@@ -7,7 +6,7 @@ export const config: WebdriverIO.Config = {
   connectionRetryTimeout: 120000,
   connectionRetryCount: 3,
   specs: ["./test/specs/**/*.ts"],
-  exclude: ["./test/specs/orderRun/*.ts"],
+  exclude: ["./test/specs/framework/*.ts"],
 
   suites: {
     sanity: ["./test/specs/sanity/*.ts"],
@@ -18,17 +17,15 @@ export const config: WebdriverIO.Config = {
   maxInstances: 2,
   capabilities: [
     {
-      maxInstances: 2,
       browserName: "chrome",
-      acceptInsecureCerts: true,
+      'goog:chromeOptions': {
+        // args: ['--headless', '--disable-gpu'],
+        }
       // specs: ["test/specs/chromeOnly/*.ts"], - it will override the suite config
     },
-
     // {
     //   maxInstances: 2,
-    //   browserName: "firefox",
-    //   acceptInsecureCerts: true,
-    // specs: ["test/ffOnly/*"],
+    //   browserName: 'firefox',
     // },
   ],
   reporters: ["spec", "dot"],
@@ -41,6 +38,7 @@ export const config: WebdriverIO.Config = {
   //     },
   //   ],
   // ],
+
   services: ["chromedriver"],
   framework: "mocha",
   mochaOpts: {

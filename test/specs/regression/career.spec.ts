@@ -9,6 +9,6 @@ describe("Regression Suite : Career Page", () => {
     await landingPage.open("/");
     await landingPage.navigateToCareerPage();
     const isUserRedirect = await landingPage.isUserRedirectToCareerPage();
-    expect(isUserRedirect);
+    expect(isUserRedirect).toBeTruthy;
   });
 });
