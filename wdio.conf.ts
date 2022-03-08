@@ -1,3 +1,5 @@
+const video = require('wdio-video-reporter');
+
 export const config: WebdriverIO.Config = {
   logLevel: "error",
   bail: 0,
@@ -28,7 +30,7 @@ export const config: WebdriverIO.Config = {
     //   browserName: 'firefox',
     // },
   ],
-  reporters: ["spec", "dot"],
+ // reporters: ["spec", "dot"],
 
   // reporters: [
   //   [
@@ -38,6 +40,18 @@ export const config: WebdriverIO.Config = {
   //     },
   //   ],
   // ],
+
+  reporters: [
+    [video, {
+      saveAllVideos: true,       // If true, also saves videos for successful test cases
+      videoSlowdownMultiplier: 3, // Higher to get slower videos, lower for faster videos [Value 1-100]
+    }],
+    ['allure', {
+      outputDir: 'allure-results',
+      disableWebdriverStepsReporting: true,
+      disableWebdriverScreenshotsReporting: true,
+    }],
+  ],
 
   services: ["chromedriver"],
   framework: "mocha",
