@@ -1,7 +1,7 @@
 ## webdriverIo-Project Creation
 
 1. Run command npm init
-2. Init the project npm init wdio .
+2. Init the project ``` npm init wdio . ```
 
 ## webdriverIo-capabilities
 - ### Grouping Of Test Cases
@@ -19,12 +19,7 @@
     - Updating Config with reporters
     - Can have multiple reports as well
     - support multiple Reports - allure, spec, dot etc.
-    - Eg. ALlure-Report Integration  , Video Reporting
-- ### Custom Reporting
-    - 
-    - Can have multiple reports as well
-    - support multiple Reports - allure, spec, dot etc.
-    - Eg. ALlure-Report Integration  
+    - Eg. ALlure-Report Integration  , Video Reporting 
 
 - ### Framework
     - #### Mocha
